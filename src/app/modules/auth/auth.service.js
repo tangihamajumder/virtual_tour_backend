@@ -1,6 +1,6 @@
 import httpStatus from "http-status";
-import ApiError from "../../errorHandlers/ApiError";
-import User from "../user/user.model";
+import ApiError from "../../errorHandlers/ApiError.js";
+import User from "../user/user.model.js";
 
 const signUp = async (payload) => {
   const { email } = payload;
