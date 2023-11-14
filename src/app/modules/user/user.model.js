@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import mongoose, { Schema } from 'mongoose';
-import config from '../../../config';
+import config from '../../../config/index.js';
 
 const user = new Schema(
   {
@@ -21,11 +21,6 @@ const user = new Schema(
       type: String,
       required: true,
       select: false,
-    },
-    role: {
-      type: String,
-      required: true,
-      default: 'user',
     },
     contactNo: {
       type: String,
