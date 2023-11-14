@@ -14,7 +14,18 @@ const signUp = asyncTryCatch(async (req, res) => {
   });
 });
 
+const signIn = asyncTryCatch(async (req, res) => {
+  const result = await authService.signIn(req.body);
+
+  apiResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'User logged in successfully',
+    data: result.accessToken,
+  });
+});
+
 export const authController = {
   signUp,
-  // signIn,
+  signIn,
 };

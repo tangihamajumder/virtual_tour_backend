@@ -5,9 +5,13 @@ const router = express.Router();
 
 const moduleRoutes = [
   {
-      path: '/sign-up',
-      route: authRoutes,
-    },
+    path: '/sign-up',
+    route: authRoutes,
+  },
+  {
+    path: '/signin',
+    route: authRoutes,
+  },
 ];
 
 moduleRoutes.forEach((route) => {
