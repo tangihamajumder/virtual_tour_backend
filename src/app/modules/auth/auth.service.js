@@ -32,10 +32,12 @@ const signIn = async (payload) => {
       throw new ApiError(httpStatus.UNAUTHORIZED, 'Password is incorrect');
     }
   
-    const { email: user, role, id } = isUserExist;
+    const { email: user, id } = isUserExist;
+    console.log(typeof config.jwt.expires_in);
   
     const accessToken = jwtHelpers.createToken(
-      { user, role, id },
+      { user, id },
+      config.jwt.secret,
       config.jwt.expires_in
     );
   
