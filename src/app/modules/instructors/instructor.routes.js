@@ -7,8 +7,8 @@ router.post(
   '/add-instructor',
   instructorController.addInstructor
 );
-// router.get('/all-courses', courseController.getAllCourses);
-// router.patch('/update-course/:id', courseController.updateCourse);
-// router.delete('/:id', courseController.deleteCourseById);
+router.get('/all-instructors', instructorController.getAllInstructors);
+router.patch('/update-instructor/:id', instructorController.updateInstructorDetails);
+router.delete('/:id', instructorController.deleteInstructorById);
 
 export const instructorRoutes = router;
