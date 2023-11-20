@@ -10,6 +10,10 @@ const getAllCourses = () => {
   return Course.find();
 };
 
+const getCourseById = (id) => {
+  return Course.findById(id);
+};
+
 const updateCourse = async (id, payload) => {
   const isExist = await Course.findById(id);
 
@@ -27,6 +31,7 @@ const deleteCourseById = async (id) => {
 export const courseService = {
   createCourse,
   getAllCourses,
+  getCourseById,
   updateCourse,
   deleteCourseById,
 };

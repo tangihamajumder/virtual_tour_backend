@@ -10,6 +10,10 @@ const getAllInstructors = () => {
   return Instructor.find();
 };
 
+const getInstructorById = (id) => {
+  return Instructor.findById(id);
+};
+
 const updateInstructorDetails = async (id, payload) => {
   const isExist = await Instructor.findById(id);
 
@@ -27,6 +31,7 @@ const deleteInstructorById = async (id) => {
 export const instructorService = {
   addInstructor,
   getAllInstructors,
+  getInstructorById,
   updateInstructorDetails,
   deleteInstructorById
 };

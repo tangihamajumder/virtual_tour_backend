@@ -15,6 +15,7 @@ const signUp = asyncTryCatch(async (req, res) => {
 });
 
 const signIn = asyncTryCatch(async (req, res) => {
+  console.log('req', req.body);
   const result = await authService.signIn(req.body);
 
   apiResponse(res, {

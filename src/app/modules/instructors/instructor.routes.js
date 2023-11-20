@@ -8,6 +8,7 @@ router.post(
   instructorController.addInstructor
 );
 router.get('/all-instructors', instructorController.getAllInstructors);
+router.get('/:id', instructorController.getInstructorById);
 router.patch('/update-instructor/:id', instructorController.updateInstructorDetails);
 router.delete('/:id', instructorController.deleteInstructorById);
 

@@ -15,7 +15,7 @@ const course = new Schema(
       required: true,
     },
     students: {
-      type: Number,
+      type: String,
       required: true,
     },
     desc: {

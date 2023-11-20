@@ -18,6 +18,7 @@ const signUp = async (payload) => {
 };
 
 const signIn = async (payload) => {
+  console.log(payload);
     const { email, password } = payload;
     const isUserExist = await User.isUserExist(email);
   
@@ -33,7 +34,6 @@ const signIn = async (payload) => {
     }
   
     const { email: user, id } = isUserExist;
-    console.log(typeof config.jwt.expires_in);
   
     const accessToken = jwtHelpers.createToken(
       { user, id },

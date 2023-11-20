@@ -23,6 +23,17 @@ const getAllInstructors = asyncTryCatch(async (req, res) => {
     });
   });
 
+  const getInstructorById = asyncTryCatch(async (req, res) => {
+    const result = await instructorService.getInstructorById(req.params.id);
+  
+    apiResponse(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      data: result,
+    });
+  });
+
+
   const updateInstructorDetails = asyncTryCatch(async (req, res) => {
     const result = await instructorService.updateInstructorDetails(req.params.id, req.body);
   
@@ -47,6 +58,7 @@ const getAllInstructors = asyncTryCatch(async (req, res) => {
 export const instructorController = {
   addInstructor,
   getAllInstructors,
+  getInstructorById,
   updateInstructorDetails,
   deleteInstructorById
 };

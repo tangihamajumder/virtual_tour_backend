@@ -23,6 +23,16 @@ const getAllCourses = asyncTryCatch(async (req, res) => {
   });
 });
 
+const getCourseById = asyncTryCatch(async (req, res) => {
+  const result = await courseService.getCourseById(req.params.id);
+
+  apiResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    data: result,
+  });
+});
+
 const updateCourse = asyncTryCatch(async (req, res) => {
   const result = await courseService.updateCourse(req.params.id, req.body);
 
@@ -47,6 +57,7 @@ const deleteCourseById = asyncTryCatch(async (req, res) => {
 export const courseController = {
   createCourse,
   getAllCourses,
+  getCourseById,
   updateCourse,
   deleteCourseById,
 };
