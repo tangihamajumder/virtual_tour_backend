@@ -21,11 +21,11 @@ const updateCourse = async (id, payload) => {
     throw new ApiError(httpStatus.NOT_FOUND, 'Course not found');
   }
 
-  await Course.findOneAndUpdate({_id: id}, payload, { new: true });
+  await Course.findOneAndUpdate({ _id: id }, payload, { new: true });
 };
 
 const deleteCourseById = async (id) => {
-  await Course.findOneAndDelete(id);
+  await Course.findByIdAndDelete(id);
 };
 
 export const courseService = {

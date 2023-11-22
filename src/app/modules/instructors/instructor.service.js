@@ -25,7 +25,7 @@ const updateInstructorDetails = async (id, payload) => {
 };
 
 const deleteInstructorById = async (id) => {
-    await Instructor.findOneAndDelete(id);
+    await Instructor.findByIdAndDelete(id);
   };
 
 export const instructorService = {
